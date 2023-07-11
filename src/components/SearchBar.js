@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const SearchBar = ({onSubmit}) => {
+const SearchBar = ({ onSubmit }) => {
     const [term, setTerm] = useState('')
 
     const onFormSubmit = (event) => {
@@ -9,20 +9,21 @@ const SearchBar = ({onSubmit}) => {
     }
 
     return (
-        <div className="ui segment">
-            <form onSubmit={onFormSubmit} className="ui form">
-                <div className="field">
-                    <label>Image Search</label>
+        <div className="searchbar--container">
+            <form onSubmit={onFormSubmit}>
+                <div className="searchbar--form">
+                    <i className="fa-solid fa-magnifying-glass"></i>
                     <input
+                        placeholder="search for an image"
                         type="text"
                         value={term}
                         onChange={(e) => setTerm(e.target.value)}
                     />
                 </div>
             </form>
+            <i className="fa-solid fa-cart-shopping"></i>
         </div>
     )
-
 }
 
 export default SearchBar;

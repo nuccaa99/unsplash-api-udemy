@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import axios from 'axios';
 import SearchBar from "./SearchBar";
 import ImageList from "./ImageList";
+import "./styles.css"
 
 
 const App = () => {
@@ -20,7 +21,7 @@ const App = () => {
     }
 
     return (
-        <div className="ui container" style={{ marginTop: '10px' }}>
+        <div className="container">
             <SearchBar onSubmit={onSearchSubmit} />
             <ImageList images={images} />
         </div>
