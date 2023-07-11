@@ -7,6 +7,7 @@ import "./styles.css"
 
 const App = () => {
     const [images, setImages] = useState([]);
+    const [errorMessage, setErrorMessage] = useState("")
 
     const onSearchSubmit = async (term) => {
         const response = await
@@ -17,13 +18,16 @@ const App = () => {
                         Authorization: 'Client-ID 0oXlTxMsdJy1xbNFA9Aya4xCIZjU0JNJJGEoho1r9y0'
                     }
                 })
-        setImages(response.data.results)
+        if (response.data.results.length > 0) {
+            setImages(response.data.results)
+        } else setErrorMessage("error")
+
     }
 
     return (
         <div className="container">
             <SearchBar onSubmit={onSearchSubmit} />
-            <ImageList images={images} />
+            <ImageList images={images} errorMessage={errorMessage} />
         </div>
     )
 

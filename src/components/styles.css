@@ -70,3 +70,8 @@ form {
 .fa-solid.fa-cart-shopping {
     opacity: 50%;
 }
+
+.error {
+    width: 100%;
+    text-align: center;
+}
