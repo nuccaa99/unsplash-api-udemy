@@ -1,7 +1,8 @@
 import { React, useState } from "react";
+import { Route, Routes } from "react-router-dom";
 import axios from 'axios';
-import SearchBar from "./SearchBar";
-import ImageList from "./ImageList";
+import HomePage from "../Pages/HomePage";
+import Cart from "../Pages/Cart";
 import "./styles.css"
 
 
@@ -47,13 +48,22 @@ const App = () => {
 
     return (
         <div className="container">
-            <SearchBar onSubmit={onSearchSubmit} cartItems={cartItems} />
-            <ImageList images={images} errorMessage={errorMessage} toggleFavorite={toggleFavorite} cartItems={cartItems} addToCart={addToCart}
-                removeFromCart={removeFromCart} />
+            <Routes>
+                <Route exact path="/" element={
+                    <HomePage onSubmit={onSearchSubmit}
+                        cartItems={cartItems}
+                        images={images}
+                        errorMessage={errorMessage}
+                        toggleFavorite={toggleFavorite}
+                        addToCart={addToCart}
+                        removeFromCart={removeFromCart} />
+                }>
+                </Route>
+                <Route path="/cart" element={<Cart />}></Route>
+            </Routes>
+
         </div>
     )
-
-
 }
 
 export default App;

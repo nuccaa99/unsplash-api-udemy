@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const SearchBar = ({ onSubmit, cartItems }) => {
@@ -26,7 +27,7 @@ const SearchBar = ({ onSubmit, cartItems }) => {
                 <i className="fa-solid fa-cart-shopping" style={{ color: '#757d8a' }}></i>
             }
             {cartItems.length > 0 &&
-                <a href="./cart"><i className="fa-solid fa-cart-shopping" ></i></a>
+                <Link to="/cart"><i className="fa-solid fa-cart-shopping" ></i></Link>
             }
         </div>
     )
