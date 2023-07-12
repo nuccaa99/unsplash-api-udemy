@@ -15,6 +15,11 @@ body {
     --secondary-dark-color: #2E3138;
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 
 .image-list {
     display: grid;
@@ -68,10 +73,29 @@ form {
 }
 
 .fa-solid.fa-cart-shopping {
-    opacity: 50%;
+    cursor: pointer;
 }
 
 .error {
     width: 100%;
     text-align: center;
+}
+
+.image--container {
+    position: relative;
+}
+
+.fa-solid.fa-heart {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    cursor: pointer;
+}
+
+.fa-solid.fa-circle-plus,
+.fa-solid.fa-delete-left {
+    position: absolute;
+    top: 5px;
+    left: 225px;
+    cursor: pointer;
 }

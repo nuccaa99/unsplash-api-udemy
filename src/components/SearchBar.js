@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-const SearchBar = ({ onSubmit }) => {
+
+const SearchBar = ({ onSubmit, cartItems }) => {
     const [term, setTerm] = useState('')
 
     const onFormSubmit = (event) => {
@@ -21,7 +22,12 @@ const SearchBar = ({ onSubmit }) => {
                     />
                 </div>
             </form>
-            <i className="fa-solid fa-cart-shopping"></i>
+            {cartItems.length === 0 &&
+                <i className="fa-solid fa-cart-shopping" style={{ color: '#757d8a' }}></i>
+            }
+            {cartItems.length > 0 &&
+                <a href="./cart"><i className="fa-solid fa-cart-shopping" ></i></a>
+            }
         </div>
     )
 }
