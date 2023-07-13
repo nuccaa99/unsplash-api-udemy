@@ -34,6 +34,10 @@ const App = () => {
         setCartItems(prevItems => prevItems.filter(item => item.id !== id))
     }
 
+    function emptyCart() {
+        setCartItems([])
+    }
+
     function toggleFavorite(id) {
         const updatedArr = images.map((img) => {
             if (img.id === id) {
@@ -59,7 +63,15 @@ const App = () => {
                         removeFromCart={removeFromCart} />
                 }>
                 </Route>
-                <Route path="/cart" element={<Cart />}></Route>
+                <Route path="/cart"
+                    element={
+                        <Cart
+                            emptyCart={emptyCart}
+                            cartItems={cartItems}
+                            addToCart={addToCart}
+                            removeFromCart={removeFromCart} />
+                    }>
+                </Route>
             </Routes>
 
         </div>

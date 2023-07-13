@@ -27,7 +27,10 @@ const SearchBar = ({ onSubmit, cartItems }) => {
                 <i className="fa-solid fa-cart-shopping" style={{ color: '#757d8a' }}></i>
             }
             {cartItems.length > 0 &&
-                <Link to="/cart"><i className="fa-solid fa-cart-shopping" ></i></Link>
+                <div className="cartIcon--container">
+                    <Link to="/cart"><i className="fa-solid fa-cart-shopping" ></i></Link>
+                    <span className="cart--quantity">{cartItems.length}</span>
+                </div>
             }
         </div>
     )

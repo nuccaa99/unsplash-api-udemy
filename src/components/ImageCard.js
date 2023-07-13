@@ -9,9 +9,9 @@ const ImageCard = ({ image, toggleFavorite, cartItems, addToCart, removeFromCart
 
     function heartIcon() {
         if (image.isFavorite) {
-            return <i className="fa-solid fa-heart" style={{ color: '#FF5C5C' }} onClick={() => { toggleFavorite(image.id) }}></i>
+            return <i className="fa-solid fa-heart card" style={{ color: '#FF5C5C' }} onClick={() => { toggleFavorite(image.id) }}></i>
         } else if (hovered) {
-            return <i className="fa-solid fa-heart" style={{ color: '#D9A7A7' }} onClick={() => { toggleFavorite(image.id) }}></i>
+            return <i className="fa-solid fa-heart card" style={{ color: '#D9A7A7' }} onClick={() => { toggleFavorite(image.id) }}></i>
         }
     }
 

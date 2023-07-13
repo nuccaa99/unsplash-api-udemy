@@ -85,7 +85,7 @@ form {
     position: relative;
 }
 
-.fa-solid.fa-heart {
+.fa-solid.fa-heart.card {
     position: absolute;
     top: 5px;
     left: 5px;
@@ -98,4 +98,79 @@ form {
     top: 5px;
     left: 225px;
     cursor: pointer;
+}
+
+.cartIcon--container {
+    position: relative;
+}
+
+
+.cart--quantity {
+    background-color: var(--main-dark-color);
+    color: var(--main-light-color);
+    font-size: 0.5em;
+    padding: 1px 4px;
+    border-radius: 50%;
+    text-align: center;
+    font-weight: bold;
+    position: absolute;
+    right: -8px;
+    top: -5px;
+
+}
+
+.header--container {
+    display: flex;
+    flex-direction: row;
+    padding: 0px 30px;
+    justify-content: space-between;
+}
+
+.cart--content--container {
+    padding: 30px;
+    padding-left: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.cart--item--container {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.cart--item--image {
+    width: 250px;
+}
+
+.cart--item-desc {
+    font-size: 0.8em;
+    width: 50%;
+}
+
+.cart--fav--remove {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart--item--price {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.cart--subtotal {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 70%;
+
 }
