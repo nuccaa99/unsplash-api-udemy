@@ -4,6 +4,7 @@ import ImageCard from './ImageCard';
 
 
 const ImageList = ({ images, errorMessage, toggleFavorite, cartItems, addToCart, removeFromCart }) => {
+    
     if (errorMessage.length > 0) {
         return (
             <div className="error">Sorry, nothing matched your search terms.</div>

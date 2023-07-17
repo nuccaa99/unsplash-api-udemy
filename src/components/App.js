@@ -68,8 +68,8 @@ const App = () => {
                         <Cart
                             emptyCart={emptyCart}
                             cartItems={cartItems}
-                            addToCart={addToCart}
-                            removeFromCart={removeFromCart} />
+                            removeFromCart={removeFromCart}
+                        />
                     }>
                 </Route>
             </Routes>

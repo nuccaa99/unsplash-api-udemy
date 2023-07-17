@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import useHover from "../hooks/useHover";
 
 const ImageCard = ({ image, toggleFavorite, cartItems, addToCart, removeFromCart }) => {
+ 
     const [hovered, ref] = useHover();
     const [span, setSpan] = useState(0)
     const imageRef = useRef();

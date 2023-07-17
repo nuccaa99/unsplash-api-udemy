@@ -1,12 +1,11 @@
 import { React, useState } from "react";
 import CartItem from "../components/CartItem";
 
-const Cart = ({ cartItems, emptyCart }) => {
+const Cart = ({ cartItems, emptyCart, removeFromCart, toggleFavorite }) => {
     const [buttonText, setButtonText] = useState("Place Order")
     const placeOrder = () => {
         setButtonText("Ordering...")
         setTimeout(() => {
-            console.log("Order placed!")
             setButtonText("Place Order")
             emptyCart()
         }, 3000)
@@ -23,16 +22,14 @@ const Cart = ({ cartItems, emptyCart }) => {
             <div className="cart--content--container">
                 {cartItems.map((item) => {
                     return (
-                        <CartItem item={item} key={item.id} />
+                        <CartItem item={item} key={item.id} removeFromCart={removeFromCart} />
                     )
                 })}
             </div>
             <div className="cart--subtotal">
-                <p>Total: {totalCostDisplay}</p>
-                <p>{cartItems.length} items</p>
-                <div className="cart--button">
-                    <button onClick={placeOrder}>{buttonText}</button>
-                </div>
+                <span className="cart--sub--total">Total: {totalCostDisplay}</span>
+                <span className="cart--sub--quantity">{cartItems.length} items</span>
+                <button className="cart--button" onClick={placeOrder}>{buttonText}</button>
             </div>
         </div>
     )
