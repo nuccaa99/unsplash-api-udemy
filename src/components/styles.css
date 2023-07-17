@@ -123,9 +123,16 @@ form {
     display: flex;
     flex-direction: row;
     padding: 0px 30px;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
-
+.header--remove {
+    margin-left: auto;
+    cursor: pointer;
+}
+.fa-solid.fa-arrow-left {
+    margin-top:22px;
+    margin-right: 20px;
+}
 .cart--content--container {
     padding: 30px;
     padding-left: 60px;

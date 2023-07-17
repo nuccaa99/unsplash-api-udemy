@@ -1,5 +1,6 @@
 import { React, useState } from "react";
 import CartItem from "../components/CartItem";
+import { Link } from "react-router-dom";
 
 const Cart = ({ cartItems, emptyCart, removeFromCart, toggleFavorite }) => {
     const [buttonText, setButtonText] = useState("Place Order")
@@ -16,13 +17,14 @@ const Cart = ({ cartItems, emptyCart, removeFromCart, toggleFavorite }) => {
     return (
         <div>
             <header className="header--container">
+                <Link to="/"><i className="fa-solid fa-arrow-left"></i></Link>
                 <h3>Shopping Cart</h3>
-                <h5>Remove all</h5>
+                <h5 className="header--remove" onClick={emptyCart}>Remove all</h5>
             </header>
             <div className="cart--content--container">
                 {cartItems.map((item) => {
                     return (
-                        <CartItem item={item} key={item.id} removeFromCart={removeFromCart} />
+                        <CartItem item={item} key={item.id} removeFromCart={removeFromCart} toggleFavorite={toggleFavorite} />
                     )
                 })}
             </div>

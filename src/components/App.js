@@ -48,6 +48,15 @@ const App = () => {
             return img
         })
         setImages(updatedArr)
+        const updatedArrCart = cartItems.map((img) => {
+            if (img.id === id) {
+                return {
+                    ...img, isFavorite: !img.isFavorite
+                }
+            }
+            return img
+        })
+        setCartItems(updatedArrCart)
     }
 
     return (
@@ -69,6 +78,7 @@ const App = () => {
                             emptyCart={emptyCart}
                             cartItems={cartItems}
                             removeFromCart={removeFromCart}
+                            toggleFavorite={toggleFavorite}
                         />
                     }>
                 </Route>
