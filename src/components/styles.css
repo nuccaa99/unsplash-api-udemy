@@ -128,6 +128,7 @@ form {
 .header--remove {
     margin-left: auto;
     cursor: pointer;
+    color: red;
 }
 .fa-solid.fa-arrow-left {
     margin-top:22px;
