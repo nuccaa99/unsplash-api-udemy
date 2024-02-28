@@ -39,6 +39,7 @@ a {
 }
 
 .searchbar--container {
+    gap:15px;
     margin: 30px 0px;
     width: 100%;
     display: flex;
@@ -215,3 +216,10 @@ form {
 .fa-solid.fa-x, .fa-solid.fa-heart {
     cursor: pointer;
 } 
+
+
+@media screen and (max-width: 850px) {
+    .fa-solid.fa-magnifying-glass {
+      display: none;
+    }
+  }
